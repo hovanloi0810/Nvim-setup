@@ -1,8 +1,7 @@
 require 'core.options'  -- Load general options
 require 'core.keymaps'  -- Load general keymaps
 require 'core.snippets' -- Custom code snippets
--- [[ Install `lazy.nvim` plugin manager ]]
---    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
+-- [[ Install `lazy.nvim` plugin manager ]] See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
@@ -15,7 +14,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup {
   require 'plugins.neotree',
-  require 'plugins.colorscheme',
   require 'plugins.bufferline',
   require 'plugins.lualine',
   require 'plugins.treesitter',
@@ -29,5 +27,8 @@ require('lazy').setup {
   require 'plugins.misc',
   require 'plugins.comment',
   require 'plugins.markdown',
+  require 'plugins.noice',
+  require 'plugins.neoscroll',
   -- require 'plugins.catpuccin',
+  require 'plugins.colorscheme',
 }
